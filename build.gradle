@@ -1,0 +1,13 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+dependencies {
+
+}
+
+allprojects {
+    apply plugin: "idea"
+}

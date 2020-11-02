@@ -1,0 +1,32 @@
+[ {
+  "_id" : "MONGODB",
+  "location" : {
+    "host" : "localhost",
+    "port" : "27017",
+    "user" : "root",
+    "pass" : "pass",
+    "entrypoint" : "admin",
+    "attr" : {
+      "collectiongps": "gps",
+      "collectiontemp": "temp"
+    },
+    "path" : "mydatabase"
+  },
+  "functionalities" : ["INSERT_GPS_DATA", "INSERT_TEMP_DATA", "DELETE_GPS_DATA", "DELETE_TEMP_DATA"],
+  "attr" : { }
+}, {
+  "_id" : "MYSQLDB",
+  "location" : {
+    "host" : "localhost",
+    "port" : "3306",
+    "user" : "root",
+    "pass" : "mysqlrootpwd",
+    "entrypoint" : "mydatabase",
+    "attr" : {
+      "tablegps": "geodata"
+    },
+    "path" : "temperatur"
+  },
+  "functionalities" : [ "INSERT_GPS_DATA", "INSERT_TEMP_DATA", "DELETE_GPS_DATA", "DELETE_TEMP_DATA" ],
+  "attr" : { }
+} ]

@@ -1,0 +1,73 @@
+[ {
+  "_id" : "GPS_DATA_RABBITMQ",
+  "location" : {
+    "host" : "localhost",
+    "port" : "5672",
+    "user" : "rabbitmq",
+    "pass" : "rabbitmqpwd",
+    "entrypoint" : "/",
+    "attr" : {
+      "erlangcookie" : "SWQOKODSQALRPCLNMEQG",
+      "vhost" : "/",
+      "hostname" : "rabbit1"
+    },
+    "path" : "gps"
+  },
+  "criteria" : "phonetype",
+  "attr" : {
+    "phonetype": ""
+  }
+}, {
+  "_id" : "TEMP_DATA_REDIS",
+  "location" : {
+    "host" : "localhost",
+    "port" : "6379",
+    "user" : "",
+    "pass" : "reddispwd",
+    "entrypoint" : "",
+    "attr" : { },
+    "path" : "temp"
+  },
+  "criteria" : "temp",
+  "attr" : {
+    "temperatur" : ""
+  }
+} ,
+{
+  "_id" : "SOURCE_MONGODB",
+  "location" : {
+    "host" : "localhost",
+    "port" : "27017",
+    "user" : "root",
+    "pass" : "pass",
+    "entrypoint" : "admin",
+    "attr" : {
+      "collectiongps": "gps",
+      "collectiontemp": "temp"
+    },
+    "path" : "mydatabase"
+  },
+  "criteria" : "",
+  "attr" : {
+    "gpssize": "",
+    "templength": ""
+  }
+}, {
+  "_id" : "SOURCE_MYSQLDB",
+  "location" : {
+    "host" : "localhost",
+    "port" : "3306",
+    "user" : "root",
+    "pass" : "mysqlrootpwd",
+    "entrypoint" : "mydatabase",
+    "attr" : {
+      "tablegps": "geodata"
+    },
+    "path" : "temperatur"
+  },
+  "criteria" : "",
+  "attr" : {
+    "gpssize": "",
+    "templength": ""
+  }
+} ]

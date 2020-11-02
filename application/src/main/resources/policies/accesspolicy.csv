@@ -1,0 +1,6 @@
+## ACCESS POLICY ##
+
+p, TEMP_DATA_REDIS, *, *, allow
+p, GPS_DATA_RABBITMQ, *, *, allow
+#p, SOURCE_MONGODB, *, *, allow
+#p, SOURCE_MYSQLDB, *, *, allow

@@ -1,0 +1,53 @@
+version: '2'
+services:
+    mongodb:
+        image: mongo:4.0
+        container_name: "mongodb"
+        restart: always
+        environment:
+          - MONGO_DATA_DIR=/data/db
+          - MONGO_LOG_DIR=/dev/null
+          - MONGO_INITDB_ROOT_USERNAME=root
+          - MONGO_INITDB_ROOT_PASSWORD=pass
+        volumes:
+          - ./mongodb/data/db:/data/db
+        ports:
+            - "27017:27017"
+        command: mongod --smallfiles #--logpath=/dev/null # --quiet
+    mysql:
+        image: mysql:8.0.13
+        container_name: "mysql"
+        command: --default-authentication-plugin=mysql_native_password
+        ports:
+          - "3306:3306"
+        volumes:
+          - ./mysqldb:/var/lib/mysql
+        restart: always
+        environment:
+          MYSQL_ROOT_PASSWORD: mysqlrootpwd
+          MYSQL_DATABASE: mydatabase
+          MYSQL_USER: mysqluser
+          MYSQL_PASSWORD: mysqlpwd
+    rabbitmq:
+        image: rabbitmq:3.7.8
+        container_name: "rabbitmq"
+        hostname: "rabbit1"
+        restart: always
+        volumes:
+          - ./rabbitmq/enabled_plugins:/etc/rabbitmq/enabled_plugins
+         #- "./rabbitmq.config:/etc/rabbitmq/rabbitmq.config:ro"
+         #- "./autocluster-0.4.1.ez:/usr/lib/rabbitmq/lib/rabbitmq_server-3.5.5/plugins/autocluster-0.4.1.ez"
+        ports:
+          - "15672:15672"
+          - "5672:5672"
+        environment:
+          RABBITMQ_ERLANG_COOKIE: "SWQOKODSQALRPCLNMEQG"
+          RABBITMQ_DEFAULT_USER: "rabbitmq"
+          RABBITMQ_DEFAULT_PASS: "rabbitmqpwd"
+          RABBITMQ_DEFAULT_VHOST: "/"
+    redis:
+        image: 'redis:4-alpine'
+        container_name: "reddis"
+        command: redis-server --requirepass reddispwd
+        ports:
+          - '6379:6379'

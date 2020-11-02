@@ -1,0 +1,24 @@
+DROP DATABASE IF EXISTS mydatabase;
+CREATE DATABASE mydatabase;
+USE mydatabase;
+CREATE TABLE `pet` (
+  `id` varchar(45) NOT NULL,
+  `name` varchar(20) DEFAULT NULL,
+  `owner` varchar(20) DEFAULT NULL,
+  `species` varchar(20) DEFAULT NULL,
+  `sex` char(1) DEFAULT NULL,
+  `birth` varchar(20) DEFAULT NULL,
+  `death` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ;
+
+INSERT INTO pet VALUES ('442a520d-035b-4f7c-97ef-acac6f9f7e1b','Puffball','Diane','hamster','f','30.03.1999','02.04.2001');
+INSERT INTO pet VALUES ('fd8d360f-b8bf-4a2a-b2b4-7602ca936965','Bob','Dennis','dog','m','25.03.2000',NULL);
+INSERT INTO pet VALUES ('5a1a56c9-f625-4be0-aa2b-4c7b4419dbc0','Fluffy','Harry','dog','m','21.08.2010',NULL);
+INSERT INTO pet VALUES ('486a8d6c-ee91-419d-809f-e5e1d774cbe2','Kitty','Lina','cat','f','04.10.2017',NULL);
+INSERT INTO pet VALUES ('9891f417-5c1d-4990-8f8b-ff22c712f5e0','Klopfer','Bambi','rabbit','m','13.11.2005','28.12.2015');
+
+
+
+
+

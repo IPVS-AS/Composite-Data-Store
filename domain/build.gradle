@@ -1,0 +1,24 @@
+repositories {
+    mavenCentral()
+}
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+dependencies {
+    compile('org.casbin:jcasbin:1.2.0')
+
+    //compile group: 'org.springframework', name: 'spring-context', version: '5.1.5.RELEASE'
+
+    // Lombok
+    compileOnly "org.projectlombok:lombok:1.16.20"
+    annotationProcessor "org.projectlombok:lombok:1.16.20"
+
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.9.0'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.0'
+    compile group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+
+}

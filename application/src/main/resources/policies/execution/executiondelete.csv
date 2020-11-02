@@ -1,0 +1,6 @@
+## executiondelete ##
+
+p, SOURCE_MYSQLDB, DELETE_GPS_DATA, MYSQLDB, ^(?:[2-9]\d|\d{3,})$, ^(?:[2-9]\d|\d{3,})$
+p, SOURCE_MYSQLDB, DELETE_TEMP_DATA, MYSQLDB, ^(?:[2-9]\d|\d{3,})$, ^(?:[2-9]\d|\d{3,})$
+p, SOURCE_MONGODB, DELETE_GPS_DATA, MONGODB, ^(?:[2-9]\d|\d{3,})$, ^(?:[2-9]\d|\d{3,})$
+p, SOURCE_MONGODB, DELETE_TEMP_DATA, MONGODB, ^(?:[2-9]\d|\d{3,})$, ^(?:[2-9]\d|\d{3,})$

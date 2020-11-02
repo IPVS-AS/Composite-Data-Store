@@ -1,0 +1,4 @@
+rootProject.name = 'ma_composite_data_store'
+
+include 'domain'
+include 'application'
